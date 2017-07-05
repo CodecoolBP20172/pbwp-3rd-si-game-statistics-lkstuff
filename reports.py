@@ -40,11 +40,18 @@ def count_by_genre(file_name, genre):
     for row in data:
         if genre == row[3]:
             counter += 1
-    return counter 
+    return counter
 
 
 def get_line_number_by_title(file_name, title):
-    pass
+    data = read_file(file_name)
+    line_number = 1
+    for row in data:
+        if title == row[0]:
+            return line_number
+        line_number += 1
+    raise ValueError
+
 
 # nice to have functions
 def sort_abc(file_name):
