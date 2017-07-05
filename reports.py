@@ -17,14 +17,21 @@ def count_games(file_name):
 
 def decide(file_name, year):
     data = read_file(file_name)
-    for i in data:
-        if i[2] == str(year):
+    for row in data:
+        if row[2] == str(year):
             return True
     return False
 
 
 def get_latest(file_name):
-    pass
+    data = read_file(file_name)
+    game_name = data[0][0]
+    game_release = data[0][2]
+    for row in data:
+        if int(game_release) < int(row[2]):
+            game_name = row[0]
+            game_release = row[2]
+    return game_name
 
 
 def count_by_genre(file_name, genre):

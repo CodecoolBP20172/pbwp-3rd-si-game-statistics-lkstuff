@@ -11,4 +11,5 @@ def write_line(file_handler, line):
 export = open('export.txt', "w")
 write_line(export, count_games(FILE_NAME))
 write_line(export, decide(FILE_NAME, 2004))
+write_line(export, get_latest(FILE_NAME))
 export.close()

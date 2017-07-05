@@ -8,3 +8,4 @@ pp = pprint.PrettyPrinter()
 # Printing functions
 pp.pprint(count_games(FILE_NAME))
 pp.pprint(decide(FILE_NAME, 2004))
+pp.pprint(get_latest(FILE_NAME))
