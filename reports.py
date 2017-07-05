@@ -54,13 +54,38 @@ def get_line_number_by_title(file_name, title):
 
 
 # nice to have functions
-def sort_abc(file_name):
-    pass
+# an expected outcome
+# def sort_abc(file_name):
+#     data = read_file(file_name)
+#     iterations = 1
+#     while iterations < len(data):
+#         j = 0
+#         while j <= len(data) - 2:
+#             if data[j][0] > data[j + 1][0]:
+#                 temp = data[j + 1][0]
+#                 data[j + 1][0] = data[j][0]
+#                 data[j][0] = temp
+#             j = j + 1
+#         iterations = iterations + 1
+#     return (data)
 
 
 def get_genres(file_name):
-    pass
+    data = read_file(file_name)
+    genres = set()
+    for row in data:
+        genres.add(row[3])
+    return sorted(list(genres))
 
 
 def when_was_top_sold_fps(file_name):
-    pass
+    data = read_file(file_name)
+    game_sold = 0
+    game_release = 0
+    for row in data:
+        if row[3] == "First-person shooter" and game_sold < float(row[1]):
+            game_sold = float(row[1])
+            game_release = int(row[2])
+    if game_release > 0:
+        return game_release
+    raise ValueError
