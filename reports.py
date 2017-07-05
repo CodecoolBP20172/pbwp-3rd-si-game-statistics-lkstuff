@@ -16,7 +16,11 @@ def count_games(file_name):
 
 
 def decide(file_name, year):
-    pass
+    data = read_file(file_name)
+    for i in data:
+        if i[2] == str(year):
+            return True
+    return False
 
 
 def get_latest(file_name):
@@ -41,5 +45,3 @@ def get_genres(file_name):
 
 def when_was_top_sold_fps(file_name):
     pass
-
-    
