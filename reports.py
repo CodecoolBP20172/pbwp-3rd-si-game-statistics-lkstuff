@@ -35,7 +35,12 @@ def get_latest(file_name):
 
 
 def count_by_genre(file_name, genre):
-    pass
+    data = read_file(file_name)
+    counter = 0
+    for row in data:
+        if genre == row[3]:
+            counter += 1
+    return counter 
 
 
 def get_line_number_by_title(file_name, title):
