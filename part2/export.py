@@ -12,4 +12,5 @@ def write_line(file_handler, line):
 
 export = open('export.txt', 'w')
 write_line(export, get_most_played(FILE_NAME))
+write_line(export, sum_sold(FILE_NAME))
 export.close()

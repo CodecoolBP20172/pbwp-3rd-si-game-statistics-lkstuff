@@ -29,8 +29,22 @@ def get_most_played(file_name):
 # 2 How many copies have been sold total?
 def sum_sold(file_name):
     data = read_file(file_name)
-    pass
+    counter = 0.0
+    for row in data:
+        counter += float(row[1])
+    return counter
 
+
+'''
+def count_by_genre(file_name, genre):
+    data = read_file(file_name)
+    counter = 0
+    for row in data:
+        if genre == row[3]:
+            counter += 1
+    return counter
+
+'''
 
 # 3 What is the average selling?
 def  get_selling_avg(file_name):
