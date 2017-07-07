@@ -55,8 +55,12 @@ def  get_selling_avg(file_name):
 # 4 How many characters long is the longest title?
 def count_longest_title(file_name):
     data = read_file(file_name)
-    pass
-
+    game_name = len(data[0][0])
+    for row in data:
+        if game_name < len(row[0]):
+            game_name = len(row[0])
+    return game_name
+    
 
 # 5 What is the average of the release dates?
 def get_date_avg(file_name):
