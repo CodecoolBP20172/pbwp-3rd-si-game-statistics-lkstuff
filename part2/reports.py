@@ -60,12 +60,17 @@ def count_longest_title(file_name):
         if game_name < len(row[0]):
             game_name = len(row[0])
     return game_name
-    
+
 
 # 5 What is the average of the release dates?
 def get_date_avg(file_name):
+    import math
     data = read_file(file_name)
-    pass
+    counter = 0
+    for row in data:
+        counter += int(row[2])
+        average_year = counter / len(data)
+    return math.ceil(average_year)
 
 
 # 6 What properties has a game?
