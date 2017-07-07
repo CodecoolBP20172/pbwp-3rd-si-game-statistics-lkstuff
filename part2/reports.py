@@ -76,7 +76,10 @@ def get_date_avg(file_name):
 # 6 What properties has a game?
 def get_game(file_name, title):
     data = read_file(file_name)
-    pass
+    for row in data:
+        if title in row:
+            properties = [row[0], float(row[1]), int(row[2]), row[3], row[4]]
+    return properties
 
 
 # nice to have

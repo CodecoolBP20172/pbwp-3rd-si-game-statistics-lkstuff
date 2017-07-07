@@ -16,4 +16,6 @@ write_line(export, sum_sold(FILE_NAME))
 write_line(export, get_selling_avg(FILE_NAME))
 write_line(export, count_longest_title(FILE_NAME))
 write_line(export, get_date_avg(FILE_NAME))
+write_line(export, get_game(FILE_NAME, 'World of Warcraft'))
+
 export.close()
