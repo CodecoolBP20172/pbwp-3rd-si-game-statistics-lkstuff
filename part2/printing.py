@@ -11,3 +11,4 @@ pp = pprint.PrettyPrinter()
 # Printing functions
 pp.pprint(get_most_played(FILE_NAME))
 pp.pprint(sum_sold(FILE_NAME))
+pp.pprint(get_selling_avg(FILE_NAME))
