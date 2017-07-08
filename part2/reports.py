@@ -1,8 +1,6 @@
 '''
 PART2
 '''
-
-
 def read_file(file_name):
     import csv
     data = []
@@ -37,19 +35,11 @@ def sum_sold(file_name):
 # 3 What is the average selling?
 def  get_selling_avg(file_name):
     data = read_file(file_name)
-    counter = 0.0
+    counter = 0
     for row in data:
         counter += float(row[1])
         average_sold = counter / len(data)
     return average_sold
-
-# def  get_selling_avg(file_name):
-#     data = read_file(file_name)
-#     sold_total = sum_sold(data)
-#     print(sold_total)
-#     average_sold = sold_total / len(data)
-#     return average_sold
-# print(get_selling_avg('game_stat.txt'))
 
 
 # 4 How many characters long is the longest title?
@@ -84,10 +74,9 @@ def get_game(file_name, title):
 
 # nice to have
 # 1 How many games are there grouped by genre?
-def  count_grouped_by_genre(file_name):
+def count_grouped_by_genre(file_name):
     data = read_file(file_name)
-    genre_list = []
-    add_item = [genre_list.append(row[3]) for row in data]
+    genre_list = [row[3] for row in data]
     genre_dict = {}
     for item in genre_list:
         if item in genre_dict:
@@ -99,21 +88,9 @@ def  count_grouped_by_genre(file_name):
 
 # 2 What is the date ordered list of the games?
 def get_date_ordered(file_name):
+    from operator import itemgetter, attrgetter
     data = read_file(file_name)
-    pass
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    sort_by_alphabet = sorted(data, key=itemgetter(0))
+    sorted_data = sorted(sort_by_alphabet, key=itemgetter(2), reverse=True)
+    sorted_title = [row[0] for row in sorted_data]
+    return sorted_title
