@@ -86,10 +86,34 @@ def get_game(file_name, title):
 # 1 How many games are there grouped by genre?
 def  count_grouped_by_genre(file_name):
     data = read_file(file_name)
-    pass
+    genre_list = []
+    add_item = [genre_list.append(row[3]) for row in data]
+    genre_dict = {}
+    for item in genre_list:
+        if item in genre_dict:
+            genre_dict[item] += 1
+        else:
+            genre_dict[item] = 1
+    return genre_dict
 
 
 # 2 What is the date ordered list of the games?
 def get_date_ordered(file_name):
     data = read_file(file_name)
     pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
