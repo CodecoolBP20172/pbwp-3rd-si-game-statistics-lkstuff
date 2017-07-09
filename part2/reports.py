@@ -1,6 +1,8 @@
 '''
 PART2
 '''
+
+
 def read_file(file_name):
     import csv
     data = []
@@ -33,7 +35,7 @@ def sum_sold(file_name):
 
 
 # 3 What is the average selling?
-def  get_selling_avg(file_name):
+def get_selling_avg(file_name):
     data = read_file(file_name)
     counter = 0
     for row in data:

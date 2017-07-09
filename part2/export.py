@@ -6,7 +6,7 @@ from reports import *
 
 FILE_NAME = 'game_stat.txt'
 
-# Export functions
+
 def write_line(file_handler, line):
     file_handler.writelines(str(line) + '\n')
 
